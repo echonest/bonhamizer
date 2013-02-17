@@ -8,7 +8,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <script src="js/underscore-min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="jremix.js"></script> 
-<title> The Bohnamizer</title>
+<title> The Bonhamizer</title>
 </head>
 
 <body>
@@ -20,11 +20,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a id='show-search' class="brand">The Bohnamizer</a>
+      <a id='show-search' class="brand">The Bonhamizer</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li><a id='show-main'  href="index.html">Main</a></li>
-          <li><a id='show-gallery' href="gallery.html" >Gallery of songs</a></li>
+          <!--<li><a id='show-main'  href="index.html">Main</a></li>-->
+          <li><a id='show-gallery' href="gallery.html" >Pick a song</a></li>
           <li><a id='show-loader' href="loader.html">Upload a song</a></li>
           <li><a id='show-about' href="about.html">About</a></li>
         </ul>
@@ -33,24 +33,112 @@
   </div>
 </div>
 
-<div id='info-div'>
-<span id='info'> </span> 
-<span id='tweet-span'> 
+<div class="container">
+    <div id="jumbotron">
+        <h1> The Bonhamizer </h1>
+        <div id='tagline'>Some songs just need a little bit of Bonzo</div>
+        <div id='info-div'>
+            <h2 id='info'> </span> 
+                <span id='tweet-span'> 
     <a href="https://twitter.com/share" id='tweet' class="twitter-share-button" data-lang="en" data-count='none'>Tweet</a>
     <script>!function(d,s,id){var
     js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</span>
+                </span>
+        </div>
+        <div id='error'> </div> 
+    </div>
 </div>
 
-<div id='error'> </div> 
-<div id="hero">
+<div class="container">
+   <div class="container">
+        <span class="txt">  <select class='sel' id='beat-selector'>
+        </select>
+        <!--<button class="btn btn-small" id='reset'>Reset</button> -->
+        <!-- <button class="btn btn-small" id='play'>Play</button>-->
+        <button id="play" disabled="disabled" class="btn active btn-primary"><i  class="icon-white icon-play"></i> Play</button>
+        <button id="stop" class="btn active btn-primary"><i  class="icon-white icon-stop"></i> Stop</button>
+        <!--<button class="btn active"><i class="icon-white icon-stop"></i> Stop</button> -->
+    </div>
+    <!--<img id='jb-image' src='images/jb1969.jpg'>  -->
+
+    <div id="slideshow">
+        <div class="active">
+            <a href="http://zrockblog.com/john-bonham-with-led-zeppelin-1969/"><img src="images/jb1969.jpg" alt="John Bonham with Led Zeppelin 1969" /></a>
+            From zrockblog.com
+        </div>
+        <div>
+            <a href="http://forums.ledzeppelin.com/index.php?/topic/8135-r-i-p-bonzo/"><img src="images/lz.jpg" alt="John Bonham " /></a>
+           LedZeppelin.com
+        </div>
+        <div>
+            <a href="http://saiyuna.deviantart.com/art/John-Bonham-81835468"><img src="images/deviant.jpg" alt="John Bonham " /></a>
+           ~Saiynua 
+        </div>
+        <div>
+            <a href="http://en.wikipedia.org/wiki/File:John_Bonham-2.jpg"><img src="images/John_Bonham-2.jpg" alt="John Bonham " /></a>
+            From Wikipedia
+        </div>
+        <div>
+            <a href="http://www.ajchen.com/2010/06/16/john-bonham/"><img src="images/JohnBonham.jpg" alt="John Bonham " /></a>
+            From ajchen.com
+        </div>
+
+        <div>
+            <a href="http://s419.beta.photobucket.com/user/paulwells73/media/jb2.jpg.html?fromLegacy=true"><img src="images/jb2.jpg" alt="John Bonham " /></a>
+            From paulwels73's library
+        </div>
+
+        <div>
+            <a href="http://www.ajchen.com/2010/06/16/john-bonham/"><img src="images/portrait.jpg" alt="John Bonham " /></a>
+            From ajchen.com
+        </div>
+
+        <!--
+        <div >
+            <a href="http://www.ebay.com/itm/JOHN-BONHAM-A-A3-POSTER-PRINT-HAL414-/120654602436"><img src="images/jb2.jpg" alt="John Bonham " /></a>
+           Ebay 
+        </div>
+        -->
+        <div >
+            <a href="http://www.tumblr.com/tagged/john-bonham?before=1341290522"><img src="images/incar.jpg" alt="John Bonham " /></a>
+           via tumblr
+        </div>
+        <div>
+            <a href="http://www.musicroom.com/blog/notes/rock-and-pop/page/27"><img src="images/John_Bonham_Led_Zeppelin.jpg" alt="John Bonham " /></a>
+           via musicroom
+        </div>
+        <div>
+            <a href="http://ssheltonimages.com/tracks_online_drum-1.html"><img
+            src="images/Led_Zeppelin_s_John_Bonham_Drum_Out_Takes_Fool_in_the_Rain.jpg" alt="John Bonham " /></a>
+           via ssheltonimages
+        </div>
+        <div>
+            <a href="http://www.myspace.com/mikecaravello"><img
+            src="images/jp3.jpg" alt="John Bonham " /></a>
+           via Mike Caravello
+        </div>
+        <!--
+        <div >
+            <a href="http://www.thisdayinmusic.com/pages/john_bonham"><img src="images/jb-med.jpg" alt="John Bonham " /></a>
+           via thisdayinmusic
+        </div>
+        -->
+    </div>
+
+  <div class="container span8 footer">
+      <hr>
+        <small>
+        Created at Music Hack Day San Francisco by <a href="http://twitter.com/plamere">Paul Lamere</a>. 
+        Powered by <a href="http://echonest.com">The Echo Nest</a>. 
+        </small>
+    </div>
+</div>
+
+<div id="workarea">
     <div id='tiles'></div>
     <div id="stats">
-        <button class="btn btn-small" id='reset'>Reset</button>
-        <button class="btn btn-small" id='play'>Play</button>
         <span id="numbers"> 
-            <span class='nval' id='bmode'>bars</span> 
-            Tile: <span class='nval' id='tile'> 1 </span> 
+            Beat: <span class='nval' id='tile'> 1 </span> 
             Period: <span class='nval' id='speed'> 100 </span> 
             Nat Tempo: <span class='nval' id='ntempo'> 100 </span> 
             Cur Tempo: <span class='nval' id='tempo'> 100 </span> 
@@ -89,11 +177,12 @@ s.parentNode.insertBefore(ga, s);
 var remixer;
 var player;
 var driver;
-var track;
+var myTrack = null;
 var effects;
-var drums;
+var drums = null;
 var drumQ;
 
+var drumCache = {};
 var paper;
 var tiles = [];
 var selectedTile;
@@ -104,48 +193,17 @@ var bMode = 'tatums';
 var shifted = false;
 var controlled = false;
 var chartReady;
-var draggedOver = null;
+var slideShowTimer;
+var showTiles = false;
+var stuffDelay = 0;
 
-var bonzoStyle = false;
-
-if (bonzoStyle) {
-    bMode = 'segments';
-}
 
 var tsig = 4
 
 
 var drumInfos = [
-    {
-        name:'',
-        id: 'TRGOUIL13CA77B1497',
-        start: 4,
-        end:  351,
-        tempo: 117,
-        cur: 4,
-    },
-    {
-        name: 'fool in the rain, double time',
-        'id' : 'TRSKATS13CA772D1AE',
-        start: 16,
-        cur: 16,
-        end:  295,
-        tempo: 127,
-        startingBeat: 0,    // 0-based
-    },
-    /*
-    {
-        name: 'when the levee breaks',
-        'id' : 'TRUXTBL13CAA3AC103',
-        start: 0,
-        cur: 0,
-        end:  1028,
-        tempo: 140,
-        file: 'levee'
-    },
-    */
     {   // boatload of awesome
-        name: 'all of my love',
+        name: 'hammer of the gods',
         'id' : 'TRLVCCK13C54536274',
         start: 20,
         cur: 20,
@@ -154,11 +212,29 @@ var drumInfos = [
         startingBeat: 2,    // 0-based
         file: 'BonhamFile14'
     },
+    {
+        name:'Basic Bonham',
+        id: 'TRGOUIL13CA77B1497',
+        start: 4,
+        end:  351,
+        tempo: 117,
+        cur: 4,
+        startingBeat: 1,    // 0-based
+    },
+    {
+        name: 'double time shuffle',
+        'id' : 'TRSKATS13CA772D1AE',
+        start: 16,
+        cur: 16,
+        end:  295,
+        tempo: 127,
+        startingBeat: 1,    // 0-based
+    },
     {   // bonham shuffle
         name: 'bohham shuffle',
         'id' : 'TRTGMPG13CA76D6540',
-        start: 54,
-        cur: 54,
+        start: 53,
+        cur: 53,
         end:  368,
         tempo: 132,
         startingBeat: 0,    // 0-based
@@ -166,7 +242,7 @@ var drumInfos = [
     }
 ]
 
-var drumInfo = drumInfos[1];
+var drumInfo = drumInfos[0];
 
 // From Crockford, Douglas (2008-12-17). JavaScript: The Good Parts (Kindle Locations 734-736). Yahoo Press.
 
@@ -193,9 +269,9 @@ function error(s) {
 
 
 function adjustSpeed() {
-    if (drums && track) {
+    if (drums && myTrack) {
         var t1 = drums.audio_summary.tempo;
-        var t2 = track.audio_summary.tempo;
+        var t2 = myTrack.audio_summary.tempo;
 
         var ratio = .93;
         var ratio2 = .93;
@@ -204,27 +280,9 @@ function adjustSpeed() {
             ratio = t2/t1;
             ratio2 = (ratio + 1) / 2;
         }
-
-        console.log('adjust speed', t1, t2, ratio, ratio2);
         setSpeedFactor(ratio2)
     }
 }
-
-function goBars() {
-    bMode = 'bars';
-    createTilePanel(bMode);
-}
-
-function goBeats() {
-    bMode = 'beats';
-    createTilePanel(bMode);
-}
-
-function goTatums() {
-    bMode = 'tatums';
-    createTilePanel(bMode);
-}
-
 
 function stop() {
     player.stop();
@@ -233,7 +291,7 @@ function stop() {
 
 function createTiles(qtype) {
     var tiles = [];
-    var qlist = track.analysis[qtype];
+    var qlist = myTrack.analysis[qtype];
     for (var i = 0; i < qlist.length; i++) {
         tiles.push(createTile(i, qlist[i]));
     }
@@ -259,31 +317,25 @@ function getTitle(title, artist, url) {
 
 function setDisplayMode(playMode) {
     if (playMode) {
-        //$("#help").hide();
-        $("#hero").show();
-        $("#play").show();
         $("#tweet-span").show();
     } else {
-        //$("#help").show();
-        $("#hero").hide();
-        $("#play").hide();
         $("#tweet-span").hide();
     } 
 }
 
 
 function showTrackTitle(t) {
-    info(t.title + ' by ' + t.artist);
+    info(t.title + ' (Bonhamized)  by ' + t.artist);
 }
 
 
 function trackReady(t) {
     t.fixedTitle = getTitle(t.title, t.artist, t.info.url);
     document.title = 'Bohhamized version of ' + t.fixedTitle;
-    // $("#song-title").text(t.fixedTitle);
 }
 
 function readyToPlay(t) {
+    console.log('readytoPlay');
     if (t.status === 'ok') {
         trackReady(t);
         everyoneIsReady();
@@ -293,7 +345,7 @@ function readyToPlay(t) {
 }
 
 function markPlayable() {
-    var quanta = track.analysis[bMode];
+    var quanta = myTrack.analysis[bMode];
     runLength(quanta, .55, -30, 20, 16);
     alignDrums(quanta);
     postFilter(quanta, 0, 0);
@@ -306,7 +358,7 @@ function getNextDrum() {
     }
 
     if (tsig == 3) {
-        if (drumInfo.cur % 4 == 3) {
+        if (drumInfo.cur % 4 == 1) {
             drumInfo.cur+=1;
         }
     }
@@ -323,14 +375,34 @@ function getNextDrum() {
 
 function stuffBeats(quanta) {
     drumInfo.cur = drumInfo.start;
+    var cov = 0;
     for (var i = 0; i < quanta.length; i++) {
         var q = quanta[i];
         if (q.needsDrums) {
-            q.drum = getNextDrum();
+            if (cov >= stuffDelay) {
+                q.drum = getNextDrum();
+            }
+            cov++;
         } else {
             q.drum = null;
         }
     }
+    return cov / quanta.length;
+}
+
+function coverageCheck() {
+    var quanta = myTrack.analysis[bMode];
+    var count = 0;
+    for (var i = 0; i < quanta.length; i++) {
+        var q = quanta[i];
+        if (q.drum) {
+            count++;
+        } 
+    }
+     cov = count / quanta.length;
+     if (cov < .20) {
+        info("Bonzo doesn't really want to play on this song.");
+     }
 }
 
 
@@ -350,7 +422,6 @@ function alignDrums(quanta) {
             }
         }
     }
-    console.log('Cleared', first, start, cleared, 'tatums');
 }
 
 
@@ -379,7 +450,6 @@ function postFilter(quanta, startOffset, endOffset) {
 
     if (startOffset !== 0) {
         var first = findFirstDrum(quanta);
-        console.log('pf1',first, startOffset);
         if (first >= 0) {
             if (startOffset > 0) {
                 // start later
@@ -390,9 +460,7 @@ function postFilter(quanta, startOffset, endOffset) {
                 }
             } else {
                 // start earlier
-                console.log('pf2', first, startOffset);
                 for (var i = first + startOffset; i <= first; i++) {
-                    console.log('pf3', i, first, startOffset);
                     if (i >= 0 && i < quanta.length) {
                         quanta[i].needsDrums = true;
                     }
@@ -475,7 +543,7 @@ function gotTheAnalysis(profile) {
     if (status == 'complete') {
         info("Loading track ...");
         remixer.remixTrack(profile.response.track, function(state, t, percent) {
-            track = t;
+            myTrack = t;
             if (state == 1) {
                 info("Here we go ...");
                 setTimeout( function() { readyToPlay(t); }, 10);
@@ -495,12 +563,14 @@ function gotTheAnalysis(profile) {
 }
 
 function gotTheDrums(profile) {
+    console.log('got the drums', myTrack);
     var status = get_status(profile);
     if (status == 'complete') {
         info("Loading drums ...");
         remixer.remixTrack(profile.response.track, function(state, t, percent) {
             if (state == 1) {
                 info("Here we go ...");
+                drumCache[t.id] = t;
                 drumsReady(t)
             } else if (state == 0) {
                 if (percent >= 99) {
@@ -518,30 +588,41 @@ function gotTheDrums(profile) {
 }
 
 function drumsReady(t) {
+    console.log('drumsReady');
     drums = t;
     drumQ = drums.analysis.tatums;
+    
+    console.log('drum remix', drums, myTrack);
+    var which = 0;
+    for (var i = drumInfo.start; i < drumInfo.end; i++) {
+        var curBeat = (drumInfo.startingBeat + which++) % 8;
+        drumQ[i].beat = Math.floor(curBeat/2);
+    }
     everyoneIsReady();
 }
 
 function everyoneIsReady() {
-    if (drums && track) {
+    console.log("everyone is ready", drums, myTrack);
+    if (drums && myTrack) {
         markPlayable();
         setDisplayMode(true);
         info("ready!");
         normalizeColor();
         createTilePanel(bMode);
-        showTrackTitle(track);
-        tweetSetup(track);
-        console.log('track', track);
+        showTrackTitle(myTrack);
+        tweetSetup(myTrack);
+        console.log('track', myTrack);
         adjustSpeed();
+        coverageCheck();
+        $('#play').removeAttr('disabled');
     }
 }
 
 
 function fetchAnalysis(trid) {
+    myTrack = null;
     var url = 'http://static.echonest.com/infinite_jukebox_data/' + trid + '.json';
     info('Fetching the analysis');
-    // showPlotPage(trid);
     $.getJSON(url, function(data) { gotTheAnalysis(data); } )
         .error( function() { 
             info("Sorry, can't find info for that track");
@@ -549,9 +630,9 @@ function fetchAnalysis(trid) {
 }
 
 function fetchDrums(trid) {
+    drums = null;
     var url = 'http://static.echonest.com/infinite_jukebox_data/' + trid + '.json';
     info('Fetching the drums');
-    // showPlotPage(trid);
     $.getJSON(url, function(data) { 
         gotTheDrums(data); } )
         .error( function() { 
@@ -752,8 +833,7 @@ function renumberTiles() {
 
 
 function createTilePanel(which) {
-    drumQ = drums.analysis[which];
-    $("#bmode").text(which);
+    //drumQ = drums.analysis[which];
     removeAllTiles();
     var newTiles = createTiles(which);
     extendTiles(newTiles);
@@ -764,7 +844,7 @@ function normalizeColor() {
     cmin = [100,100,100];
     cmax = [-100,-100,-100];
 
-    var qlist = track.analysis.segments;
+    var qlist = myTrack.analysis.segments;
     for (var i = 0; i < qlist.length; i++) {
         for (var j = 0; j < 3; j++) {
             var t = qlist[i].timbre[j];
@@ -850,16 +930,6 @@ function keydown(evt) {
         evt.preventDefault();
     }
 
-    if (evt.which === 66  ) {  // b
-        driver.toggleBeatsTatums();
-        evt.preventDefault();
-    }
-
-    if (evt.which === 71  ) {  // g
-        goBars();
-        evt.preventDefault();
-    }
-
     if (evt.which == 17) {
         controlled = true;
     }
@@ -893,9 +963,46 @@ function urldecode(str) {
 }
 
 
+function initBeatSelector() {
+    for (var i = 0; i < drumInfos.length; i++) {
+        var di = drumInfos[i];
+        var opt = $("<option>");
+        if (i === drumInfo.which) {
+            opt.attr("selected", "selected");
+        }
+        opt.attr("value", i.toString());
+        opt.text(di.name);
+        $("#beat-selector").append(opt);
+    }
+    $("#beat-selector").change(
+        function() {
+            var val = $("#beat-selector option:selected").attr("value");
+            var which = parseInt(val);
+            setDrumBeat(which);
+        }
+    );
+}
+
+
+function initDrumInfos() {
+    for (var i = 0; i < drumInfos.length; i++) {
+        drumInfos[i].which = i;
+    }
+}
+
+function slideSwitch() {
+    var $active = $('#slideshow DIV.active');
+    if ( $active.length == 0 ) $active = $('#slideshow DIV:last');
+
+    var $next =  $active.next().length ? $active.next() : $('#slideshow DIV:first');
+    $active.removeClass('active');
+    $next.addClass('active');
+}
+
 function init() {
     jQuery.ajaxSettings.traditional = true;  
     setDisplayMode(false);
+    initDrumInfos();
 
     window.oncontextmenu = function(event) {
         event.preventDefault();
@@ -909,18 +1016,27 @@ function init() {
         return false;
     }
 
+    initBeatSelector();
+
     $("#error").hide();
 
     $("#play").click(
         function() {
-            if (driver.isRunning()) {
-                driver.stop();
-            } else {
+            if (!driver.isRunning()) {
                 driver.start();
             }
         }
     );
 
+    $("#stop").click(
+        function() {
+            if (driver.isRunning()) {
+                driver.stop();
+            } 
+        }
+    );
+
+    <!--
     $("#reset").click(
         function() {
             driver.setIncr(1);
@@ -930,6 +1046,7 @@ function init() {
             setURL();
         }
     );
+    -->
 
     paper = Raphael("tiles", 6, 4);
 
@@ -993,6 +1110,10 @@ var tspace = 3;
 var tilesPerRow = 0;
 
 function refreshLayout(animated) {
+    if (!showTiles) {
+        return;
+    }
+
     var nt = tiles.length;
     renumberTiles();
     if (nt > 0) {
@@ -1051,30 +1172,23 @@ function analyzeAudio(audio, tag, callback) {
             callback(data);
         } else {
             info(data.status + ' - ready in about ' + data.estimated_wait + ' secs. ');
-            setTimeout(function() { analyzeAudio(audio, tag, callback); }, 5000);
+            setTimeout(function() { analyzeAudio(audio, tag, callback); }, 8000);
         } 
     });
 }
 
 function setURL() {
-    if (track) {
-        var p = '?trid=' + track.id;
-        if (driver.getIncr() != 1) {
-            p += '&inc=' + driver.getIncr();
+    if (myTrack) {
+        var p = '?trid=' + myTrack.id;
+        if (drumInfo.which != 0) {
+            p += '&beat=' + drumInfo.which;
         }
-
-        var factor = Math.round(100 * player.getSpeedFactor());
-        if (factor != 100) {
-            p += '&p=' + factor;
-        }
-
-        if (bMode != 'beats') {
-            p += '&b=' + bMode;
+        if (stuffDelay > 0) {
+            p += '&delay=' + stuffDelay;
         }
     }
-
     history.replaceState({}, document.title, p);
-    tweetSetup(track);
+    tweetSetup(myTrack);
 }
 
 function tweetSetup(t) {
@@ -1089,7 +1203,7 @@ function tweetSetup(t) {
 
     $("#tweet-span").prepend(tweet);
     if (t) {
-        tweet.attr('data-text',  "Listen to my version of " + t.fixedTitle + " #bohnamizer");
+        tweet.attr('data-text',  "Listen to my version of " + t.fixedTitle + " #bonhamizer");
         tweet.attr('data-url', document.URL);
     } 
     // twitter can be troublesome. If it is not there, don't bother loading it
@@ -1105,13 +1219,24 @@ function isValidBeatMode(p) {
 function setSpeedFactor(factor) {
     player.setSpeedFactor(factor)
     $("#speed").text(Math.round(factor * 100));
-    if (track) {
-        var tempo = track.audio_summary.tempo;
+    if (myTrack) {
+        var tempo = myTrack.audio_summary.tempo;
         var ntempo = tempo * 1. / factor;
-        tsig = track.audio_summary.time_signature;
+        tsig = myTrack.audio_summary.time_signature;
         $("#ntempo").text(Math.round(tempo));
         $("#tempo").text(Math.round(ntempo));
         $("#tsig").text(tsig);
+    }
+}
+
+
+function setDrumBeat(which) {
+    drumInfo = drumInfos[which];
+    if (drumInfo.id in drumCache) {
+        var t = drumCache[drumInfo.id];
+        drumsReady(t);
+    } else {
+        fetchDrums(drumInfo.id);
     }
 }
 
@@ -1130,27 +1255,17 @@ function processParams() {
 
     if ('trid' in params) {
         var trid = params['trid'];
+        var beat = 0;
 
-        if ('p' in params) {
-            var factor = parseInt(params['p']);
-            if (factor >= 0) {
-                setSpeedFactor(factor / 100.)
-            }
+        if ('beat' in params) {
+             beat = params['beat'];
+            $("#beat-selector").val(beat);
         }
 
-        if ('inc' in params) {
-            var inc = parseInt(params['inc']);
-            if (inc > -200 && inc < 200) {
-                driver.setIncr(inc);
-            }
+        if ('delay' in params) {
+             stuffDelay = parseInt(params['delay']);
         }
-        if ('b' in params) {
-            nbMode = params['b'];
-            if (isValidBeatMode(nbMode)) {
-                bMode = nbMode;
-            }
-        }
-        fetchDrums(drumInfo.id);
+        setDrumBeat(beat);
         fetchAnalysis(trid);
     } else if ('key' in params) {
         var url = 'http://' + params['bucket'] + '/' + urldecode(params['key']);
@@ -1208,13 +1323,16 @@ function Driver(player) {
         curOp = null;
         curTile = null;
         player.stop();
-        $("#play").text("Play");
+        $("#play").show();
+        $("#stop").hide();
         setURL();
         $("#tweet-span").show();
+        clearInterval(slideShowTimer);
     }
 
 
     var window = 10;
+    var early = 10;
 
     function avg(v) {
         sum = 0;
@@ -1243,30 +1361,27 @@ function Driver(player) {
             if (curTile !== null) {
                 var delay;
 
-                if (true) {
-                    delay = player.play(0, curTile.q);
-                    if (curTile.q.drum) {
-                        curTile.q.drum.duration = curTile.q.duration; // lies lies lies
-                        player.playNow(curTile.q.drum);
-                    }
-                } else {
-                    delay = player.play(0, nextDrumQ);
-                    player.playNow(curTile.q);
-                }
+                delay = player.play(0, curTile.q);
+                if (curTile.q.drum) {
+                    curTile.q.drum.duration = curTile.q.duration; // lies lies lies
+                    player.playWhen(0, curTile.q.drum);
+                } 
 
                 setTimeout( function () { process(); }, 1000 * delay);
-                curTile.playStyle();
-                tileDiv.text(curTile.which);
-                incrDiv.text(incr);
-                confDiv.text(Math.round(curTile.q.confidence * 100));
+                if (showTiles) {
+                    curTile.playStyle();
+                    tileDiv.text(curTile.which);
+                    incrDiv.text(incr);
+                    confDiv.text(Math.round(curTile.q.confidence * 100));
 
-                if (curTile.q.oseg) {
-                    var volume = curTile.q.oseg.loudness_max;
-                    dbDiv.text(Math.round(volume));
+                    if (curTile.q.oseg) {
+                        var volume = curTile.q.oseg.loudness_max;
+                        dbDiv.text(Math.round(volume));
+                    }
+                    // we are tatums, but we want the beat, so find the parent
+                    // and then find the index of that beat in the bar
+                    beatNumDiv.text(curTile.q.parent.indexInParent + 1);
                 }
-                // we are tatums, but we want the beat, so find the parent
-                // and then find the index of that beat in the bar
-                beatNumDiv.text(curTile.q.parent.indexInParent + 1);
             } else {
                 stop();
             }
@@ -1277,11 +1392,12 @@ function Driver(player) {
         start: function() {
             curOp = next;
             process();
-            $("#inc").text(incr);
-            $("#play").text("Stop");
+            $("#play").hide();
+            $("#stop").show();
             $("#tweet-span").hide();
             setURL();
             drumInfo.cur = drumInfo.start;
+            slideShowTimer = setInterval( "slideSwitch()", 5000 );
         },
 
         stop: stop,
@@ -1307,35 +1423,6 @@ function Driver(player) {
             nextTile = tile;
         },
 
-        setLoopStart: function() {
-            loopStart = curTile;
-        },
-
-        setLoopEnd: function() {
-            loopEnd = curTile;
-        },
-
-        loopCancel: function() {
-            loopStart = null;
-            loopEnd = null;
-        },
-
-        toggleBeatsTatums : function() {
-            if (!isBeats) {
-                goBeats();
-                if (curTile) {
-                    var which = Math.round(curTile.which / 2);
-                    curTile = tiles[which];
-                }
-            } else {
-                goTatums();
-                if (curTile) {
-                    var which = curTile.which * 2;
-                    curTile = tiles[which];
-                }
-            }
-            isBeats = !isBeats
-        },
 
         isBeats: function() {
             return isBeats;

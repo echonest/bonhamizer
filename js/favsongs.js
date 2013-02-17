@@ -6,28 +6,46 @@ var favSongs = [
         "visits": 62
     }, 
     {
-        "artist": "Muse", 
-        "id": "TRHIUST13B5695A3E4", 
-        "title": "Madness", 
-        "visits": 62
+        "artist": "fun.", 
+        "id": "TRNMKTX13B485B6594&delay=2", 
+        "title": "Some Nights", 
+        "visits": 29
     }, 
     {
         "artist": "The White Stripes", 
-        "id": "TRMQYSY13B4C10127E", 
+        "id": "TRMQYSY13B4C10127E&beat=2", 
         "title": "Seven Nation Army", 
         "visits": 29
     }, 
     {
+        "artist": "The Beatles", 
+        "id": "TREHABE13B122C4092&beat=1&delay=12", 
+        "title": "Norwegian Wood (This Bird has Flown)", 
+        "visits": 62
+    }, 
+    {
+        "artist": "Foster The People", 
+        "id": "TRDAGKY1391D638C05&delay=4", 
+        "title": "Pumped Up Kicks", 
+        "visits": 62
+    }, 
+    {
+        "artist": "The XX", 
+        "id": "TREZUAM13B5676793B", 
+        "title": "Intro", 
+        "visits": 62
+    }, 
+    {
         "artist": "Daft Punk", 
-        "id": "TRSRSLI13451D2B044", 
-        "title": "Around The World", 
+        "id": "TRZKXTL13B5505133D&delay=60", 
+        "title": "Harder Better Faster Stronger", 
         "visits": 29
     }, 
     {
-        "artist": "Skrillex", 
-        "id": "TRECVNM13B542388C0", 
-        "title": "Scary Monsters and Nice Sprites", 
-        "visits": 25
+        "artist": "Mumford & Sons", 
+        "id": "TRCTTRA13B49A6D22E", 
+        "title": "The Cave", 
+        "visits": 29
     }, 
     {
         "artist": "The Postal Service", 

@@ -249,14 +249,14 @@ function createJRemixer(context, jquery) {
                 var duration = q.duration * speedFactor;
                 var next = start + duration;
 
-                if (speedFactor == 1 && curQ && curQ.track === q.track && curQ.which + 1 == q.which) {
+                if (false) {
                     // let it ride
                 } else {
                     var audioSource = context.createBufferSource();
                     audioGain.gain.value = 1;
                     audioSource.buffer = q.track.buffer;
                     audioSource.connect(audioGain);
-                    var tduration = track.audio_summary.duration - q.start;
+                    var tduration = q.track.audio_summary.duration - q.start;
                     audioSource.noteGrainOn(start, q.start, tduration);
                     if (curAudioSource) {
                         curAudioSource.noteOff(start);
@@ -280,6 +280,10 @@ function createJRemixer(context, jquery) {
 
                 playNow: function(q) {
                     queuePlay(0, q);
+                },
+
+                playWhen: function(when, q) {
+                    return queuePlay(when, q);
                 },
 
                 addCallback: function(callback) {

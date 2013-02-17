@@ -1,1 +1,1 @@
-s3cmd sync --acl-public *  s3://static.echonest.com/girltalkinabox/
+s3cmd sync --exclude archive/ --acl-public *  s3://static.echonest.com/bonhamizer/
