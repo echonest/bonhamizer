@@ -12,6 +12,18 @@ var favSongs = [
         "visits": 29
     }, 
     {
+        "artist": "Radiohead", 
+        "id": "TRTONCV13AF133BAFD&delay=10", 
+        "title": "Karma Police", 
+        "visits": 29
+    }, 
+    {
+        "artist": "AWOLNation", 
+        "id": "TRWHQOK13B357AB74A&delay=6", 
+        "title": "Sail", 
+        "visits": 29
+    }, 
+    {
         "artist": "The White Stripes", 
         "id": "TRMQYSY13B4C10127E&beat=2", 
         "title": "Seven Nation Army", 
@@ -27,6 +39,12 @@ var favSongs = [
         "artist": "Foster The People", 
         "id": "TRDAGKY1391D638C05&delay=4", 
         "title": "Pumped Up Kicks", 
+        "visits": 62
+    }, 
+    {
+        "artist": "Ke$ha", 
+        "id": "TROOICH13B3BEDCC5F", 
+        "title": "Die Young", 
         "visits": 62
     }, 
     {
@@ -51,6 +69,12 @@ var favSongs = [
         "artist": "The Postal Service", 
         "id": "TRBXFDO13B52FCCD0B", 
         "title": "Such Great Heights", 
+        "visits": 23
+    }, 
+    {
+        "artist": "Taylor Swift", 
+        "id": "TRXGYBO13B544336BB", 
+        "title": "I Knew You Were Trouble", 
         "visits": 23
     }, 
 ]

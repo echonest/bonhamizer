@@ -38,12 +38,7 @@
         <h1> The Bonhamizer </h1>
         <div id='tagline'>Some songs just need a little bit of Bonzo</div>
         <div id='info-div'>
-            <h2 id='info'> </span> 
-                <span id='tweet-span'> 
-    <a href="https://twitter.com/share" id='tweet' class="twitter-share-button" data-lang="en" data-count='none'>Tweet</a>
-    <script>!function(d,s,id){var
-    js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                </span>
+            <h2 id='info'> </h2> 
         </div>
         <div id='error'> </div> 
     </div>
@@ -57,6 +52,11 @@
         <!-- <button class="btn btn-small" id='play'>Play</button>-->
         <button id="play" disabled="disabled" class="btn active btn-primary"><i  class="icon-white icon-play"></i> Play</button>
         <button id="stop" class="btn active btn-primary"><i  class="icon-white icon-stop"></i> Stop</button>
+                <span id='tweet-span'> 
+    <a href="https://twitter.com/share" id='tweet' class="twitter-share-button" data-lang="en" data-count='none'>Tweet</a>
+    <script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </span>
         <!--<button class="btn active"><i class="icon-white icon-stop"></i> Stop</button> -->
     </div>
     <!--<img id='jb-image' src='images/jb1969.jpg'>  -->
@@ -64,33 +64,33 @@
     <div id="slideshow">
         <div class="active">
             <a href="http://zrockblog.com/john-bonham-with-led-zeppelin-1969/"><img src="images/jb1969.jpg" alt="John Bonham with Led Zeppelin 1969" /></a>
-            From zrockblog.com
-        </div>
-        <div>
-            <a href="http://forums.ledzeppelin.com/index.php?/topic/8135-r-i-p-bonzo/"><img src="images/lz.jpg" alt="John Bonham " /></a>
-           LedZeppelin.com
-        </div>
-        <div>
-            <a href="http://saiyuna.deviantart.com/art/John-Bonham-81835468"><img src="images/deviant.jpg" alt="John Bonham " /></a>
-           ~Saiynua 
-        </div>
-        <div>
-            <a href="http://en.wikipedia.org/wiki/File:John_Bonham-2.jpg"><img src="images/John_Bonham-2.jpg" alt="John Bonham " /></a>
-            From Wikipedia
+            Image from zrockblog.com
         </div>
         <div>
             <a href="http://www.ajchen.com/2010/06/16/john-bonham/"><img src="images/JohnBonham.jpg" alt="John Bonham " /></a>
-            From ajchen.com
+            Image from ajchen.com
         </div>
 
         <div>
             <a href="http://s419.beta.photobucket.com/user/paulwells73/media/jb2.jpg.html?fromLegacy=true"><img src="images/jb2.jpg" alt="John Bonham " /></a>
-            From paulwels73's library
+            Image from paulwels73's library
         </div>
 
         <div>
             <a href="http://www.ajchen.com/2010/06/16/john-bonham/"><img src="images/portrait.jpg" alt="John Bonham " /></a>
-            From ajchen.com
+            Image from ajchen.com
+        </div>
+        <div>
+            <a href="http://forums.ledzeppelin.com/index.php?/topic/8135-r-i-p-bonzo/"><img src="images/lz.jpg" alt="John Bonham " /></a>
+           Image from LedZeppelin.com
+        </div>
+        <div>
+            <a href="http://saiyuna.deviantart.com/art/John-Bonham-81835468"><img src="images/deviant.jpg" alt="John Bonham " /></a>
+           Image from ~Saiynua 
+        </div>
+        <div>
+            <a href="http://en.wikipedia.org/wiki/File:John_Bonham-2.jpg"><img src="images/John_Bonham-2.jpg" alt="John Bonham " /></a>
+            Image from Wikipedia
         </div>
 
         <!--
@@ -101,21 +101,21 @@
         -->
         <div >
             <a href="http://www.tumblr.com/tagged/john-bonham?before=1341290522"><img src="images/incar.jpg" alt="John Bonham " /></a>
-           via tumblr
+           Image via tumblr
         </div>
         <div>
             <a href="http://www.musicroom.com/blog/notes/rock-and-pop/page/27"><img src="images/John_Bonham_Led_Zeppelin.jpg" alt="John Bonham " /></a>
-           via musicroom
+           Image via musicroom
         </div>
         <div>
             <a href="http://ssheltonimages.com/tracks_online_drum-1.html"><img
             src="images/Led_Zeppelin_s_John_Bonham_Drum_Out_Takes_Fool_in_the_Rain.jpg" alt="John Bonham " /></a>
-           via ssheltonimages
+           Image via ssheltonimages
         </div>
         <div>
             <a href="http://www.myspace.com/mikecaravello"><img
             src="images/jp3.jpg" alt="John Bonham " /></a>
-           via Mike Caravello
+           Image via Mike Caravello
         </div>
         <!--
         <div >
@@ -334,11 +334,10 @@ function trackReady(t) {
     document.title = 'Bohhamized version of ' + t.fixedTitle;
 }
 
-function readyToPlay(t) {
-    console.log('readytoPlay');
+function readyToPlay(t, beat) {
     if (t.status === 'ok') {
         trackReady(t);
-        everyoneIsReady();
+        setDrumBeat(beat);
     } else {
         info(t.status);
     }
@@ -538,7 +537,7 @@ function runLength(quanta, confidenceThreshold, loudnessThreshold, lookAhead, lo
     }
 }
 
-function gotTheAnalysis(profile) {
+function gotTheAnalysis(profile, beat) {
     var status = get_status(profile);
     if (status == 'complete') {
         info("Loading track ...");
@@ -546,7 +545,7 @@ function gotTheAnalysis(profile) {
             myTrack = t;
             if (state == 1) {
                 info("Here we go ...");
-                setTimeout( function() { readyToPlay(t); }, 10);
+                setTimeout( function() { readyToPlay(t, beat); }, 10);
             } else if (state == 0) {
                 if (percent >= 99) {
                     info("Here we go ...");
@@ -563,18 +562,17 @@ function gotTheAnalysis(profile) {
 }
 
 function gotTheDrums(profile) {
-    console.log('got the drums', myTrack);
     var status = get_status(profile);
     if (status == 'complete') {
         info("Loading drums ...");
         remixer.remixTrack(profile.response.track, function(state, t, percent) {
             if (state == 1) {
-                info("Here we go ...");
+                info("We got the crazy beats ...");
                 drumCache[t.id] = t;
                 drumsReady(t)
             } else if (state == 0) {
                 if (percent >= 99) {
-                    info("Here we go ...");
+                    info("We got the crazy beats ...");
                 } else {
                     info( percent  + "% of drms loaded ");
                 }
@@ -588,11 +586,9 @@ function gotTheDrums(profile) {
 }
 
 function drumsReady(t) {
-    console.log('drumsReady');
     drums = t;
     drumQ = drums.analysis.tatums;
     
-    console.log('drum remix', drums, myTrack);
     var which = 0;
     for (var i = drumInfo.start; i < drumInfo.end; i++) {
         var curBeat = (drumInfo.startingBeat + which++) % 8;
@@ -602,8 +598,7 @@ function drumsReady(t) {
 }
 
 function everyoneIsReady() {
-    console.log("everyone is ready", drums, myTrack);
-    if (drums && myTrack) {
+    if (drums != null && myTrack != null) {
         markPlayable();
         setDisplayMode(true);
         info("ready!");
@@ -611,19 +606,21 @@ function everyoneIsReady() {
         createTilePanel(bMode);
         showTrackTitle(myTrack);
         tweetSetup(myTrack);
-        console.log('track', myTrack);
         adjustSpeed();
         coverageCheck();
         $('#play').removeAttr('disabled');
+        console.log('everyone is ready');
     }
 }
 
 
-function fetchAnalysis(trid) {
+function fetchAnalysis(trid, beat) {
     myTrack = null;
     var url = 'http://static.echonest.com/infinite_jukebox_data/' + trid + '.json';
     info('Fetching the analysis');
-    $.getJSON(url, function(data) { gotTheAnalysis(data); } )
+    $.getJSON(url, function(data) { 
+        gotTheAnalysis(data, beat); 
+    } )
         .error( function() { 
             info("Sorry, can't find info for that track");
         });
@@ -1203,7 +1200,7 @@ function tweetSetup(t) {
 
     $("#tweet-span").prepend(tweet);
     if (t) {
-        tweet.attr('data-text',  "Listen to my version of " + t.fixedTitle + " #bonhamizer");
+        tweet.attr('data-text',  "I #bonhamized " + t.fixedTitle + " at " );
         tweet.attr('data-url', document.URL);
     } 
     // twitter can be troublesome. If it is not there, don't bother loading it
@@ -1265,8 +1262,7 @@ function processParams() {
         if ('delay' in params) {
              stuffDelay = parseInt(params['delay']);
         }
-        setDrumBeat(beat);
-        fetchAnalysis(trid);
+        fetchAnalysis(trid, beat);
     } else if ('key' in params) {
         var url = 'http://' + params['bucket'] + '/' + urldecode(params['key']);
         info("analyzing audio");

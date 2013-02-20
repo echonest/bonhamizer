@@ -43,6 +43,7 @@
                       <a  href="#">Paul's favorites</a>
                   </li>
 
+                  <!--
                   <li id='popular-list' class="sel-list">
                       <a href="#">Most played</a>
                    </li>
@@ -50,6 +51,7 @@
                   <li id='upload-list' class="sel-list">
                       <a  href="#">Most uploaded</a>
                    </li>
+                   -->
 
                   <li id='recent-list' class="sel-list">
                       <a  href="#">Most recent</a>
@@ -145,7 +147,7 @@ function listTracks(active, tracks) {
     $('#song-list').empty();
     $('.sel-list').removeClass('active');
     $(active).addClass('active');
-    for (var i = 0; i < tracks.length; i++) {
+    for (var i = 0; i < 20 && i < tracks.length; i++) {
         var s = tracks[i];
         var item = listSong(s);
         if (item) {
