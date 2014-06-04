@@ -127,14 +127,11 @@
 
   <div class="container span10 footer">
         <div>
-            If you like The Bonhamizer be sure to <a
-            href="http://www.omusicawards.com/nominee/the-bonhamizer">vote for it in the Best Music Hack </a>
-            category of the MTV O Music Awards.
         </div>
           <hr>
         <small>
-        Created at Music Hack Day San Francisco by <a href="http://twitter.com/plamere">Paul Lamere</a>. 
-        Powered by <a href="http://echonest.com">The Echo Nest</a>. 
+        Created at Music Hack Day San Francisco by <a href="http://twitter.com/plamere">Paul Lamere</a>.  --
+        Powered by <a href="http://echonest.com">The Echo Nest</a>. -- <a href="http://www.echonest.com/legal/"> Legal Stuff </a>
         </small>
     </div>
 </div>
@@ -548,6 +545,9 @@ function gotTheAnalysis(profile, beat) {
         info("Loading track ...");
         remixer.remixTrack(profile.response.track, function(state, t, percent) {
             myTrack = t;
+            if (isNaN(percent)) {
+                percent = 0;
+            }
             if (state == 1) {
                 info("Here we go ...");
                 setTimeout( function() { readyToPlay(t, beat); }, 10);
@@ -555,7 +555,11 @@ function gotTheAnalysis(profile, beat) {
                 if (percent >= 99) {
                     info("Here we go ...");
                 } else {
-                    info( percent  + "% of track loaded ");
+                    if (percent > 0) {
+                        info( percent  + "% of track loaded ");
+                    } else {
+                        info( "Loading the track ...");
+                    }
                 }
             } else {
                 info('Trouble  ' + t.status);
@@ -571,6 +575,9 @@ function gotTheDrums(profile) {
     if (status == 'complete') {
         info("Loading drums ...");
         remixer.remixTrack(profile.response.track, function(state, t, percent) {
+            if (isNaN(percent)) {
+                percent = 0;
+            }
             if (state == 1) {
                 info("We got the crazy beats ...");
                 drumCache[t.id] = t;
@@ -579,7 +586,11 @@ function gotTheDrums(profile) {
                 if (percent >= 99) {
                     info("We got the crazy beats ...");
                 } else {
-                    info( percent  + "% of drms loaded ");
+                    if (percent > 0) {
+                        info( percent  + "% of drms loaded ");
+                    } else {
+                        info( "Loading drums");
+                    }
                 }
             } else {
                 info('Trouble  ' + t.status);
@@ -1055,15 +1066,15 @@ function init() {
     $(document).keydown(keydown);
     $(document).keyup(keyup);
 
-
-    if (window.webkitAudioContext === undefined) {
+    window.AudioContext = window.AudioContext||window.webkitAudioContext;
+    if (window.AudioContext === undefined) {
         error("Sorry, this app needs advanced web audio. Your browser doesn't"
             + " support it. Try the latest version of Chrome or Safari");
 
         hideAll();
 
     } else {
-        var context = new webkitAudioContext();
+        var context = new AudioContext();
         remixer = createJRemixer(context, $);
         player = remixer.getPlayer();
         driver = Driver(player)

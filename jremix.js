@@ -208,7 +208,7 @@ function createJRemixer(context, jquery) {
 
         getPlayer : function() {
             var queueTime = 0;
-            var audioGain = context.createGainNode();
+            var audioGain = context.createGain();
             var curAudioSource = null;
             var curQ = null;
             var speedFactor = 1.00;
@@ -222,7 +222,7 @@ function createJRemixer(context, jquery) {
                     var audioSource = context.createBufferSource();
                     audioSource.buffer = q;
                     audioSource.connect(audioGain);
-                    audioSource.noteOn(when);
+                    audioSource.start(when);
                     return when;
                 } else if ($.isArray(q)) {
                     for (var i in q) {
@@ -234,7 +234,7 @@ function createJRemixer(context, jquery) {
                     var duration = q.duration;
                     audioSource.buffer = q.track.buffer;
                     audioSource.connect(audioGain);
-                    audioSource.noteGrainOn(when, q.start, duration);
+                    audioSource.start(when, q.start, duration);
                     q.audioSource = audioSource;
                     return when + duration;
                 } else {
@@ -257,9 +257,9 @@ function createJRemixer(context, jquery) {
                     audioSource.buffer = q.track.buffer;
                     audioSource.connect(audioGain);
                     var tduration = q.track.audio_summary.duration - q.start;
-                    audioSource.noteGrainOn(start, q.start, tduration);
+                    audioSource.start(start, q.start, tduration);
                     if (curAudioSource) {
-                        curAudioSource.noteOff(start);
+                        curAudioSource.stop(start);
                     }
                     curAudioSource = audioSource;
                 }
@@ -318,7 +318,7 @@ function createJRemixer(context, jquery) {
                 stop: function(q) {
                     if (q === undefined) {
                         if (curAudioSource) {
-                            curAudioSource.noteOff(0);
+                            curAudioSource.stop(0);
                             curAudioSource = null;
                         }
                         //audioGain.gain.value = 0;
@@ -326,7 +326,7 @@ function createJRemixer(context, jquery) {
                     } else {
                         if ('audioSource' in q) {
                             if (q.audioSource != null) {
-                                q.audioSource.noteOff(0);
+                                q.audioSource.stop(0);
                             }
                         }
                     }
