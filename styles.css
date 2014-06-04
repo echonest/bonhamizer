@@ -115,6 +115,11 @@ select {
     height:800px;
 }
 
+#slideshow img {
+    width:800px;
+    height:600px;
+}
+
 #slideshow DIV {
     position:absolute;
     top:0;
