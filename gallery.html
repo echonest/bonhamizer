@@ -69,6 +69,11 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+// framebusting
+if(top != self) {
+    top.onbeforeunload = function() {};
+    top.location.replace(self.location.href);
+}
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-3675615-27']);
@@ -156,7 +161,9 @@ function listTracks(active, tracks) {
     }
 }
 
+
 function init() {
+
     jQuery.ajaxSettings.traditional = true;  
     $("#favorite-list").click(listFavoriteTracks);
     $("#popular-list").click(listPopularTracks);

@@ -77,4 +77,10 @@ var favSongs = [
         "title": "I Knew You Were Trouble", 
         "visits": 23
     }, 
+    {
+        "artist": "高橋竹山", 
+        "id": "TRWUPHC13CFD30155D&beat=3", 
+        "title": "津軽正調じょんから節", 
+        "visits": 23
+    }, 
 ]
